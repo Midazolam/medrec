@@ -1,0 +1,102 @@
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstName %>
+    <%= form.text_field :firstName, id: :patient_firstName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surName %>
+    <%= form.text_field :surName, id: :patient_surName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mrn %>
+    <%= form.number_field :mrn, id: :patient_mrn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, id: :patient_dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dx %>
+    <%= form.text_field :dx, id: :patient_dx %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allergies %>
+    <%= form.text_field :allergies, id: :patient_allergies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consultant %>
+    <%= form.text_field :consultant, id: :patient_consultant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ward %>
+    <%= form.text_field :ward, id: :patient_ward %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admitNote %>
+    <%= form.text_area :admitNote, id: :patient_admitNote %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rad1 %>
+    <%= form.text_field :rad1, id: :patient_rad1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rad2 %>
+    <%= form.text_field :rad2, id: :patient_rad2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rad3 %>
+    <%= form.text_field :rad3, id: :patient_rad3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rad4 %>
+    <%= form.text_field :rad4, id: :patient_rad4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex1 %>
+    <%= form.text_field :ex1, id: :patient_ex1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex2 %>
+    <%= form.text_field :ex2, id: :patient_ex2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex3 %>
+    <%= form.text_field :ex3, id: :patient_ex3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ex4 %>
+    <%= form.text_field :ex4, id: :patient_ex4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

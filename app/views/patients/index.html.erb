@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Surname</th>
+      <th>Mrn</th>
+      <th>Dob</th>
+      <th>Dx</th>
+      <th>Allergies</th>
+      <th>Consultant</th>
+      <th>Ward</th>
+      <th>Admitnote</th>
+      <th>Rad1</th>
+      <th>Rad2</th>
+      <th>Rad3</th>
+      <th>Rad4</th>
+      <th>Ex1</th>
+      <th>Ex2</th>
+      <th>Ex3</th>
+      <th>Ex4</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.firstName %></td>
+        <td><%= patient.surName %></td>
+        <td><%= patient.mrn %></td>
+        <td><%= patient.dob %></td>
+        <td><%= patient.dx %></td>
+        <td><%= patient.allergies %></td>
+        <td><%= patient.consultant %></td>
+        <td><%= patient.ward %></td>
+        <td><%= patient.admitNote %></td>
+        <td><%= patient.rad1 %></td>
+        <td><%= patient.rad2 %></td>
+        <td><%= patient.rad3 %></td>
+        <td><%= patient.rad4 %></td>
+        <td><%= patient.ex1 %></td>
+        <td><%= patient.ex2 %></td>
+        <td><%= patient.ex3 %></td>
+        <td><%= patient.ex4 %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
